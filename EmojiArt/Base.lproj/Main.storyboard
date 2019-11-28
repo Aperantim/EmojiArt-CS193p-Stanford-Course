@@ -26,7 +26,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="EmojiArtViewController" customModule="EmojiArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trK-aT-haj">
@@ -72,7 +72,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🧐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-OQ-GVM" customClass="EmojiCell">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🧐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMH-OQ-GVM">
                                                     <rect key="frame" x="5.5" y="-13.5" width="69" height="77"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                                     <nil key="textColor"/>
@@ -112,18 +112,38 @@
                                             <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGy-20-KkM">
-                                                    <rect key="frame" x="0.0" y="3" width="79" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <items>
-                                                        <navigationItem id="aYB-uk-xbb">
-                                                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="7N4-Za-WBr"/>
-                                                        </navigationItem>
-                                                    </items>
-                                                </navigationBar>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlv-s8-Onc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                    <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVA-cI-IVk"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="79" height="50"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="EmojiInputCell" id="OnU-SO-Fgs" customClass="TextFieldCollectionViewCell">
+                                        <rect key="frame" x="269" y="15" width="79" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="U1I-lo-Ebv" customClass="UICollectionViewCell">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-hs-ljJ">
+                                                    <rect key="frame" x="0.0" y="8" width="79" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="79" height="50"/>
+                                        <connections>
+                                            <outlet property="textField" destination="D7N-hs-ljJ" id="FhK-Ua-kar"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
