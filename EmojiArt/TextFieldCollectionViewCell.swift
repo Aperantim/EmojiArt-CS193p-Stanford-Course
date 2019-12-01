@@ -16,6 +16,12 @@ class TextFieldCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
         }
     }
     
+    var resignationHandler: (() -> Void)?
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        resignationHandler?()
+    }
+    
     //we did it for keyboard to dissapear
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
